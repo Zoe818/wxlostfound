@@ -1,0 +1,122 @@
+<view   class="mypage">
+    <view class="page__bd">
+        <dialog show="{{ mydialog.show }}" title="{{ mydialog.title }}" buttons="{{ mydialog.buttons }}" bindbuttontap="dialogButtonTap">
+            <view>
+                {{ mydialog.content }}
+            </view>
+            <view class="weui-cells__title">选择分类</view>
+                <view class="weui-cells weui-cells_after-title">
+                    <radio-group class="weui-cells weui-cells_radio" bindchange="areaChange">
+                        <label class="weui-cell weui-check__label" wx:for="{{ areas }}">
+                            <div class="weui-cell__bd">
+                                <p>{{ item[0] }}</p>
+                            </div>
+                            <div class="weui-cell__ft">
+                                <radio type="radio" class="weui-check" name="cat"  value="{{ item[1] }}" checked="{{ areaChecked[item[1]] }}"/>
+                                <icon class="weui-icon-radio" type="success_no_circle" size="16" wx:if="{{ areaChecked[item[1]] == 'checked'}}"></icon>
+                            </div>
+                        </label>
+                    </radio-group>
+            </view>
+        </dialog>
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <view class="weui-cells__title">物品类别</view>
+            <view class="weui-cells weui-cells_after-title">
+
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">物品类别</view>
+                    </view>
+                    <div class="weui-cell__bd" bindtap="selectCat">
+                        <view>{{ area }}</view>
+                    </div>
+                </view>
+
+            <view class="weui-cells__title">物品详细信息</view>
+            <view class="weui-cells weui-cells_after-title">
+                            <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">物品名称</view>
+                    </view>
+                    <div class="weui-cell__bd">
+                        <input data-field="name" bindinput="formInputChange" class="weui-input" type="string" placeholder=""/>
+                    </div>
+                </view>
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">捡到校区</view>
+                    </view>
+                    <div class="weui-cell__bd">
+                        <input data-field="place" bindinput="formInputChange" class="weui-input" type="string" placeholder=""/>
+                    </div>
+                </view>
+
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">捡到地点</view>
+                    </view>
+                    <div class="weui-cell__bd">
+                      <input data-field="amount" bindinput="formInputChange" class="weui-input" type="string" placeholder="如：新一教学楼501教室"/>
+                    </div>
+                </view>
+
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                     <div class="item-input">
+									<textarea placeholder="物品详细描述以及备注信息，如：把物品留在了楼管、保安亭，除了卡之外还有一个白色钱包等。上传照片时请注意隐藏物品部分细节用于和失主核对。" name="desc" style="margin-bottom: 10px" data-field="description"></textarea>
+                  </div>
+                    </view>
+                </view>
+
+                </view>
+                
+                <view class="weui-cell">
+                      <view class="weui-cell__bd">
+
+                        <view style="color: blue"><span bindtap="selectImg" wx:if="{{ showAdd }}" >添加图片 </span><span bindtap="deleteImg" wx:if="{{ showDelete }}"> 删除图片</span></view>
+
+                        <editor id="editor2"
+                              data-field="description" bindinput="desInputChange">
+
+                        </editor>
+                        <editor id="editor"
+                              bindready="onEditorReady"
+                              showImgSize
+                              showImgToolbar
+                              showImgResize
+                              read-only=true
+                              data-filed="picinput"
+                              bindinput="picInputChange"
+                              show-img-toolbar=true
+                              >
+                        </editor>
+                      </view>
+                 </view>
+            </view>
+
+            <view class="weui-cells__title">联系方式</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">手机号</view>
+                    </view>
+                    <div class="weui-cell__bd">
+                        <input data-field="phonenumber" bindinput="formInputChange" class="weui-input" type="number" placeholder=""/>
+                    </div>
+                </view>
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">QQ号</view>
+                    </view>
+                    <div class="weui-cell__bd">
+                        <input data-field="qqnumber" bindinput="formInputChange" class="weui-input" type="number" placeholder="选填，建议填写"/>
+                    </div>
+                </view>
+                <view class="weui-cells__title">* 物品如果在三个月后仍未被认领，将会被系统自动下架处理并予以通知，望知悉</view>
+            <view class="weui-cell">
+            <button type="primary" class="submit" bindtap="formSubmit">提交</button>
+            </view>
+            </view>
+        </mp-form>
+    </view>
+</view>

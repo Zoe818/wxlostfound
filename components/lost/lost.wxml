@@ -1,0 +1,41 @@
+<!-- lost.wxml-->
+<view class="container">
+<view class="main-item">
+   <view class="date">
+     10月1日
+    </view>
+    <view class="item">
+      <view>
+       <text class="title">校园卡 </text>
+       <text>></text>
+       </view>
+        <view class="right-main">
+           <text class="right-name">校园卡</text>
+             <text class="right-last">南湖</text><text class="item-date">/12:50</text>
+        </view>
+    </view>
+    <view class="name">
+    <text>校园卡号:DDDE25,请拾到的同学尽快与我联系，急急急，非常感谢！</text>
+    </view>
+
+  </view>
+  <view class="main-item">
+   <view class="date">
+     10月1日
+    </view>
+    <view class="item">
+      <view>
+       <text class="title">校园卡 </text>
+       <text>></text>
+       </view>
+        <view class="right-main">
+           <text class="right-name">校园卡</text>
+             <text class="right-last">南湖</text><text class="item-date">/12:50</text>
+        </view>
+    </view>
+    <view class="name">
+    <text>校园卡号:DDDE25,请拾到的同学尽快与我联系，急急急，非常感谢！</text>
+    </view>
+
+  </view>
+</view>
