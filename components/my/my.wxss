@@ -37,14 +37,15 @@
      background-color: #fff;
      position: relative;
 }
-.message-item .icon{
+.icon{
   position: absolute;
   top:15rpx;
   right:40rpx;
-
   width:50rpx;
   height:50rpx;
-
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  border:none;
 }
 
 .main{

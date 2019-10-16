@@ -21,13 +21,13 @@
   <view class="box-item">
     <view class="title">捡到时间</view>
     <view class='selectTimeBox'>
-      <picker class='startTime' mode="time" value="{{startTime}}" start="00:00" end="23:45" bindchange="startTimeChange">
+      <picker class='startTime' mode="date" value="{{startTime}}" start="2019-01-01" end="2020-12-31" bindchange="startTimeChange">
         <view class="picker">
           {{startTime}}
         </view>
       </picker>
-      <text class='xian'>——</text>
-      <picker class='endTime' mode="time" value="{{endTime}}" start="00:00" end="23:45" bindchange="endTimeChange">
+      <text class='xian'>—</text>
+      <picker class='endTime' mode="date" value="{{endTime}}" start="2019-01-01" end="2020-12-31" bindchange="endTimeChange">
         <view class="picker">
           {{endTime}}
         </view>
@@ -47,7 +47,7 @@
   </view>
   <view catch:touchmove="handleTouchmove" class="bottom">
     <view bind:tap="handleTapOk" class="bottom-item reset">关闭</view>
-    <view bind:tap="handleTapOk" class="bottom-item ok">搜索</view>
+    <view bind:tap="handleTapCancel" class="bottom-item ok">搜索</view>
   </view>
 
 </view>

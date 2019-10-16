@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.5",
-	"appid": "wxcdee1dfcf3e4438b",
+	"appid": "wx805176d665345473",
 	"projectname": "demo",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -39,12 +39,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "丢失",
-					"pathName": "pages/lost/lost",
+					"id": 0,
+					"name": "找到",
+					"pathName": "pages/publishfound/publishfound",
 					"query": "",
 					"scene": null
 				},

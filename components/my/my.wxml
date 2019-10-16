@@ -3,7 +3,7 @@
   <view class="infor">
     <image mode="aspectFill" src="../../images/fake.png" class="img"></image>
     <view class="right-infor">
-      <text>王淇</text>
+      <text>Name</text>
       <text> 校园实名用户</text>
     </view>
   </view>
@@ -15,21 +15,21 @@
     </view>
     <view class="message-item">
       <text>QQ</text>
-      <text>123456</text>
-      <image class='icon' src='/images/edit.png'></image>
+      <text selectable="true" space="ensp" decode="true">{{qqcontext}}</text>
+      <button class="icon" style="background-image:url(../../images/edit.png);" bindtap="editqq"></button>
     </view>
     <view class="message-item">
       <text>手机号</text>
       <text>123456</text>
-      <image class='icon' src='/images/edit.png'></image>
+      <button class="icon" style="background-image:url(../../images/edit.png);" ></button>
     </view>
   </view>
 
   <view class="main" wx:for='{{lists}}' wx:key='{{index}}'>
     <view class="main-top">
-      <view class="tag {{'type'+item.type}}" wx:if='{{item.type==1}}'>
+      <!-- <view class="tag {{'type'+item.type}}" wx:if='{{item.type==1}}'>
         待处理的物品
-      </view>
+      </view> -->
       <view class="tag {{'type'+item.type}}" wx:if='{{item.type==2}}'>
         我丢失的物品
       </view>
@@ -38,15 +38,30 @@
       </view>
       <text>查看全部</text>
     </view>
-    <view wx:if='{{item.type==1}}'>还没有待处理的物品</view>
-    <view wx:if='{{item.type==2}}'>太好啦,你还没有丢过东西</view>
-    <view wx:if='{{item.type==3}}' class='content3'>
+    <view wx:if='{{item.type==1}}'>还没有待处理的物品</view> 
+    <view wx:if='{{item.type==2}}'>
+    <view class="main" wx:for='{{myLost.lost}}' wx:key='{{index}}'>
+        <view class='content3'>
       <view class="title">
-        <text>升升门禁卡</text>
+        <text>{{item.goods}}</text>
         <image class='rightIcon' src='/images/right.png'></image>
       </view>
-      <text class='tips'>已找回</text>
+      <text class='tips'>{{item.status}}</text>
 
+    </view>
+    </view>
+    </view>
+<view wx:if='{{item.type==3}}'>
+    <view class="main" wx:for='{{myLost.find}}' wx:key='{{index}}'>
+        <view class='content3'>
+      <view class="title">
+        <text>{{item.goods}}</text>
+        <image class='rightIcon' src='/images/right.png'></image>
+      </view>
+      <text class='tips'>{{item.status}}</text>
+
+    </view>
+    </view>
     </view>
   </view>
 

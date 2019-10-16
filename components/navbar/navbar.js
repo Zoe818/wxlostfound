@@ -22,6 +22,17 @@ Component({
       this.setData({
         isOpen: !this.data.isOpen
       })
+    },
+    publishFound:function(e)
+    {
+      wx.navigateTo({
+        url: '/pages/publishfound/publishfound'
+      })
+    },
+    publishLost:function(e){
+      wx.navigateTo({
+        url: '/pages/publishlost/publishlost'
+      })
     }
   }
 })

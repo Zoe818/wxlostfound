@@ -12,12 +12,14 @@
   width:100%;
   right:0;
 }
-.searchIcon>image{
+.searchButton{
   position: absolute;
   right:20px;
-
   width:32px;
   height:32px;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  border:none;
 }
 .tabBox {
   width: 60%;

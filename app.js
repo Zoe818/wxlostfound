@@ -5,7 +5,46 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    wx.showLoading({
 
+      title: '正在登录',
+
+      mask: true
+
+    })
+    let token = wx.getStorageSync('token');
+    console.log(token)
+    if(token)
+    {
+      wx.hideLoading()
+    }
+    else
+    {
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          wx.request({
+            url: 'http://lost.jystudio.top/api/wechat-login', //仅为示例，并非真实的接口地址
+            method:'post',
+            data: {
+              code: res.code,
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              if(res.data.code == 0)
+              {
+                wx.setStorageSync('token', res.data.data)
+                wx.showToast({ title: '登录成功', icon: 'success', duration: 1000 });
+                wx.hideLoading()
+              }
+            }
+          })
+        }
+      })
+    }
     // 登录
     wx.login({
       success: res => {

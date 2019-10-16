@@ -17,6 +17,7 @@ Component({
       value: true
     }
   },
+  
   data:{
     searchVal:'',
     startTime:'',
@@ -52,6 +53,15 @@ Component({
      * 点击确定
      */
     handleTapOk() {
+      console.log()
+      this.triggerEvent('handleTapOk')
+    },
+
+    /**
+ * 点击确定
+ */
+    handleTapCancel() {
+      console.log('asdasd')
       this.triggerEvent('handleTapOk')
     },
 
@@ -73,6 +83,18 @@ Component({
      */
     handleTouchmove() {
       return
+    },
+    //取消
+    canslebtn() {
+      this.triggerEvent("canslebtn");
+    },
+    //确认
+    closebtn() {
+      this.triggerEvent("closebtn");
+    },
+    // 调用父组件  事件
+    fnbindChange(e) {
+      this.triggerEvent("bindChangeEvent", e.detail);
     },
      /**
      * 选择开始时间

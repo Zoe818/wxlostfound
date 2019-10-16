@@ -6,6 +6,6 @@
     <text bindtap='tabSelect' data-index='3' class='{{tabIndex==3?"selected":""}}'>我</text>
   </view>
   <view class='searchIcon'>
-    <image src='/images/search.png'></image>
+  <button class="searchButton" bindtap="searching" style="background-image:url(../../images/search.png);" ></button>
   </view>
 </view>

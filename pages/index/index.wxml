@@ -1,8 +1,8 @@
-<tab bind:tabSelect='tabSelect'></tab>
+<tab bind:tabSelect='tabSelect' bind:searching='searching'></tab>
 <found wx:if='{{tabIndex==1}}'></found>
 <lost wx:if='{{tabIndex==2}}'></lost>
 <my wx:if='{{tabIndex==3}}'></my>
-<publishFound wx:if='{{tabIndex==4}}'></publishFound>
+
 <nav></nav>
 <!--弹窗 start-->
 <v-modal

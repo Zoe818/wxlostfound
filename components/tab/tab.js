@@ -6,12 +6,11 @@ Component({
   properties: {
 
   },
-
   /**
    * 组件的初始数据
    */
   data: {
-    tabIndex:'1'
+    tabIndex:'1',
   },
 
   /**
@@ -24,6 +23,15 @@ Component({
         tabIndex: index
       })
       this.triggerEvent('tabSelect',index)
+    },
+    searching:function(){
+      var searchingOption={}
+      this.triggerEvent('searching',searchingOption)
+    },
+    handleTapOk:function(e)
+    {
+      console.log('awdawdawdawd')
     }
+
   }
 })

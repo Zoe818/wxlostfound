@@ -1,29 +1,27 @@
 <!--index.wxml-->
 <view class="container">
-<view class="main" wx:for='{{lists}}' wx:key='{{index}}'>
+<view class="main" wx:for='{{lists}}'  wx:key='{{index}}' >
+<view bindtap='bindTapDetail' id='{{item.id}}'>
    <view class="date">
-     10月1日
+    {{item.created_at}}
     </view>
     <view class="item">
        <view class="title">
-       <text>升升门禁卡</text>
+       <text>{{item.goods}}</text>
        <image class='rightIcon' src='/images/right.png'></image> </view>
         <view class="right-main">
-           <text class="right-name">升升门禁卡</text>
-             <text class="right-last">升升</text><text class="item-date">/12:50</text>
+           <text class="right-name">{{item.area}}</text>
+             <text class="right-last">{{item.type}}</text>
         </view>
     </view>
     <view class="name">
-    <text>升升门禁卡:DDDE25</text>
-    </view>
-    <view class="audio" wx:if='{{item.type=="video"}}'>
-     <video id="myVideo" 
-     src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" id='video' enable-danmu danmu-btn controls wx:if='type=="video"'></video>
-    </view>
-    <view class="img-main" wx:else>
-    <image mode="aspectFill" src="../../images/fake.png" class="img"></image>
-    </view>
+    <text>{{item.desc}}</text>
 
+    </view>
+    <view class="img-main">
+    <image mode="aspectFill" src="{{item.img  }}" class="img"></image>
+    </view>
+</view>
  </view>
 </view>
 
