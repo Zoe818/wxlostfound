@@ -15,7 +15,7 @@
     </view>
     <view class="message-item">
       <text>QQ</text>
-      <text selectable="true" space="ensp" decode="true">{{qqcontext}}</text>
+      <text selectable="true" space="ensp" decode="true">{{item.qq}}</text>
       <button class="icon" style="background-image:url(../../images/edit.png);" bindtap="editqq"></button>
     </view>
     <view class="message-item">

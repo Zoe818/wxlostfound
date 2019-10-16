@@ -38,10 +38,6 @@ Component({
         tagId
       })
     },
-
-    /**
-     * 点击品牌
-     */
     handleTapBrand(e) {
       const brandId = e.currentTarget.dataset.brandid
       this.triggerEvent('handleTapBrand', {

@@ -35,6 +35,9 @@ Component({
       data: {
         // code: res.code,
       },
+
+     
+
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -58,8 +61,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    editqq: function (e) {
-      console.log(e.detail.value);
+    editqq: function () {
+      var that = this;
+      wx.showModal({
+        title: '请输入你的qq号',
+        content: '',
+        success: function (res) {
+          if (res.confirm) {//这里是点击了确定以后
+            console.log("success")
+          }
+          else {//这里是点击了取消以后
+          }
+        }
+      })
     },
+
   }
 })
